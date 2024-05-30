@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Repository.Database;
@@ -11,9 +12,11 @@ using Repository.Database;
 namespace Repository.Tool.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20240530022344_新增登入人員表")]
+    partial class 新增登入人員表
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1840,7 +1843,7 @@ namespace Repository.Tool.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Repository.Database.TUseraccount", b =>
+            modelBuilder.Entity("Repository.Database.Tusers", b =>
                 {
                     b.Property<long>("Id")
                         .HasColumnType("bigint")
@@ -1863,11 +1866,6 @@ namespace Repository.Tool.Migrations
                         .HasColumnType("boolean")
                         .HasComment("是否删除");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasComment("密碼");
-
                     b.Property<uint>("RowVersion")
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
@@ -1881,7 +1879,7 @@ namespace Repository.Tool.Migrations
 
                     b.HasIndex("DeleteTime");
 
-                    b.ToTable("Useraccount", null, t =>
+                    b.ToTable("users", null, t =>
                         {
                             t.HasComment("登入人員表");
                         });

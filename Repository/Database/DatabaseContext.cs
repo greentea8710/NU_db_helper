@@ -89,6 +89,9 @@ namespace Repository.Database
         public DbSet<TUser> TUser { get; set; }
 
 
+        public DbSet<TUseraccount> TUseraccount { get; set; }
+
+
         public DbSet<TUserBindExternal> TUserBindExternal { get; set; }
 
 

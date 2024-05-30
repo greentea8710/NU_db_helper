@@ -88,49 +88,53 @@ namespace TaskService.Tasks
                     db.SaveChanges();
                 }
 
-                //TClass classInfo = new();
-                //classInfo.Id = idHelper.GetId();
-                //classInfo.Number = 1;
-                //classInfo.Grade = 1;
+        //TClass classInfo = new();
+        //classInfo.Id = idHelper.GetId();
+        //classInfo.Number = 1;
+        //classInfo.Grade = 1;
 
-                //db.TClass.Add(classInfo);
-                //db.SaveChanges();
+        //db.TClass.Add(classInfo);
+        //db.SaveChanges();
 
-                //TStudent student = new();
-                //student.Id = idHelper.GetId();
-                //student.Name = "小名";
-                //student.Number = 1;
-                //student.Gender = true;
-                //student.Phone = "123456";
-                //student.ClassId = 138305063465517056;
+        //TStudent student = new();
+        //student.Id = idHelper.GetId();
+        //student.Name = "小名";
+        //student.Number = 1;
+        //student.Gender = true;
+        //student.Phone = "123456";
+        //student.ClassId = 138305063465517056;
 
-                //db.TStudent.Add(student);
-
-                //db.SaveChanges();
-
-
-                //TSubject subject = new();
-                //subject.Id = idHelper.GetId();
-                //subject.Name = "英文";
-                //subject.Teacher = "小美";
-
-                //db.TSubject.Add(subject);
-
-                ////db.SaveChanges();
+        //db.TStudent.Add(student);
+        //db.SaveChanges();
 
 
-                //TScore score = new();
-                //score.Id = idHelper.GetId();
-                //score.Score = decimal.Parse("90");
-                //score.ScoreDate = new DateOnly(2024,02,25);
-                //score.StudentId = student.Id;
-                //score.SubjectId = subject.Id;
+        //TSubject subject = new();
+        //subject.Id = idHelper.GetId();
+        //subject.Name = "英文";
+        //subject.Teacher = "小美";
 
-                //db.TScore.Add(score);
-                //db.SaveChanges();
+        //db.TSubject.Add(subject);
+        ////db.SaveChanges();
 
 
+        //TScore score = new();
+        //score.Id = idHelper.GetId();
+        //score.Score = decimal.Parse("90");
+        //score.ScoreDate = new DateOnly(2024,02,25);
+        //score.StudentId = student.Id;
+        //score.SubjectId = subject.Id;
 
+        //db.TScore.Add(score);
+        //db.SaveChanges();
+
+        /*
+        TUseraccount useraccount = new();
+        useraccount.Id = idHelper.GetId();
+        useraccount.Account = "greentea8710";
+        useraccount.Password = "password";
+        db.TUseraccount.Add(useraccount);
+        db.SaveChanges();
+        */
 
             }
             catch (Exception ex)

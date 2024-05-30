@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Repository.Database;
@@ -11,9 +12,11 @@ using Repository.Database;
 namespace Repository.Tool.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20240530024323_刪除users表")]
+    partial class 刪除users表
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1837,53 +1840,6 @@ namespace Repository.Tool.Migrations
                     b.ToTable("UserToken", null, t =>
                         {
                             t.HasComment("用户Token记录表");
-                        });
-                });
-
-            modelBuilder.Entity("Repository.Database.TUseraccount", b =>
-                {
-                    b.Property<long>("Id")
-                        .HasColumnType("bigint")
-                        .HasComment("主键标识ID");
-
-                    b.Property<string>("Account")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasComment("帳號");
-
-                    b.Property<DateTimeOffset>("CreateTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasComment("创建时间");
-
-                    b.Property<DateTimeOffset?>("DeleteTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasComment("删除时间");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("boolean")
-                        .HasComment("是否删除");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasComment("密碼");
-
-                    b.Property<uint>("RowVersion")
-                        .IsConcurrencyToken()
-                        .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("xid")
-                        .HasColumnName("xmin")
-                        .HasComment("行版本标记");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CreateTime");
-
-                    b.HasIndex("DeleteTime");
-
-                    b.ToTable("Useraccount", null, t =>
-                        {
-                            t.HasComment("登入人員表");
                         });
                 });
 
